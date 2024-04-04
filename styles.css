@@ -1,0 +1,64 @@
+body {
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+.container {
+    background-color: grey;
+    width: 500px;
+    height: 600px;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    justify-content: space-between;
+}
+
+.display-container {
+    background-color: aqua;
+    height: 25%;
+    width: 100%;
+}
+
+.input-container {
+    background-color: darkgray;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;    
+    text-align: center;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container div {
+    height: 15%;
+    width: 15%;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.input-number {
+    background-color: lightgray;
+}
+
+.input-reset {
+    background-color: lightgreen;
+}
+
+.input-action {
+    background-color: orange;
+}
+
+#zero {
+    margin: 0 18%;
+}
