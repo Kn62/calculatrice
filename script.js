@@ -18,6 +18,8 @@ const inputMultiply = document.querySelector("#multiply");
 const inputDivide = document.querySelector("#divide");
 const inputComma = document.querySelector("#comma");
 const inputEqual = document.querySelector("#equal");
+const inputLeftParenthese = document.querySelector("#left-parenthese");
+const inputRightParenthese = document.querySelector("#right-parenthese");
 const displayEquation = document.querySelector(".display-equation");
 const displayResultContainer = document.querySelector(".display-result");
 
@@ -29,7 +31,6 @@ let displayArray = [];
 
 const pushIntoArray = function(input) {
     displayArray.push(input);
-    console.log(displayArray);
     displayEquation.innerText = displayArray.join("");
 }
 
@@ -41,9 +42,9 @@ const supprFromArray = function() {
 }
 
 const displayResult = function() {
-    const result = eval(displayArray.join("")).toString();
-    displayResultContainer.innerText = result
-    displayArray = result.split("")
+    const result = eval(displayArray.join("").replace("×", "*").replace("÷", "/")).toString();
+    displayResultContainer.innerText = result;
+    displayArray = result.split("");    
 }
 // EventListener
 
@@ -59,9 +60,11 @@ inputOne.addEventListener("click", () => pushIntoArray(1) );
 inputZero.addEventListener("click", () => pushIntoArray(0) );  
 inputSum.addEventListener("click", () => pushIntoArray("+") );  
 inputReduce.addEventListener("click", () => pushIntoArray("-") );  
-inputMultiply.addEventListener("click", () => pushIntoArray("*") );  
-inputDivide.addEventListener("click", () => pushIntoArray("/") );  
-inputComma.addEventListener("click", () => pushIntoArray(".") );  
+inputMultiply.addEventListener("click", () => pushIntoArray("×") );  
+inputDivide.addEventListener("click", () => pushIntoArray("÷") );  
+inputComma.addEventListener("click", () => pushIntoArray(".") );
+inputLeftParenthese.addEventListener("click", () => pushIntoArray("(") );
+inputRightParenthese.addEventListener("click", () => pushIntoArray(")") );
 inputEqual.addEventListener("click", () =>  displayResult(displayArray));
 inputSuppr.addEventListener("click", () => supprFromArray() );  
 inputReset.addEventListener("click", () => location.reload() ); 
