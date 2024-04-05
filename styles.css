@@ -21,6 +21,20 @@ body {
     background-color: aqua;
     height: 25%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.display-equation {     
+    margin: 15px;
+    font-size: 30px;
+}
+
+.display-result {
+    text-align: right;
+    margin: 15px;
+    font-size: 45px;
 }
 
 .input-container {
